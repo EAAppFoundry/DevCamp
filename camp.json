@@ -1,0 +1,53 @@
+{
+    "_id": {
+        "$oid": "50c619a4e4b0a97d668bc8f5"
+    },
+    "name": "Camp 0",
+    "sponsers": [
+        "Brian O'Neil",
+        "Don Browning",
+        "Matthew Drooker"
+    ],
+    "startDate": "2012-11-10",
+    "endDate": "2012-01-30",
+    "hackathons": [
+        {
+            "first": {
+                "location": "Strongbox West",
+                "start": "2012-12-10",
+                "end": "2012-12-12"
+            },
+            "second": {
+                "location": "Strongbox West",
+                "start": "2013-01-22",
+                "end": "2013-01-23"
+            }
+        }
+    ],
+    "projects": [
+        {
+            "name": "On The Spot",
+            "description": "An app to help you find open conference rooms, and desks around Turner's campus",
+            "members": [
+                "Isablle Joefry",
+                "Hongwei Yan",
+                "Brad Peacock",
+                "Kwan Ng"
+            ],
+            "url": "http://cnn.com",
+            "source": "http://github.com"
+        },
+        {
+            "name": "FundIT",
+            "description": "A kickstarter for the Enterprise",
+            "members": [
+                "Allen Lyons",
+                "Rich Anderson",
+                "Brian Still"
+            ],
+            "url": "http://cnn.com",
+            "source": "http://github.com"
+        }
+    ]
+}
+
