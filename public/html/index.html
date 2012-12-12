@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=640">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div id="content" class="content">
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+	
+	<header>
+		<img class="branding" src="images/dev-camp-logo-horz.png">
+	</header>
+	
+	<script id="entry-template" type="text/x-handlebars-template">
+		<title>{{campName}} Api Documentation</title>
+
+		<section class="camp">
+
+		<header>
+			<h2>{{campName}}</h2>
+			
+			<div class="dates">
+				<span class="start">{{startDate}}</span> - <span class="end">{{endDate}}</span>
+			</div>
+
+			<div class="sponsers">
+				<h3>Sponsers</h3>
+				{{#sponsers}}
+					<span class="name">{{this}}</span>
+				{{/sponsers}}
+			</div>
+		</header>
+
+		<div class="hackathons">
+			<h3>Hackathons</h3>
+
+			{{#hackathons}}
+			<div class="hackathon">
+				<span class="location">{{location}}</span>
+				<span class="dates">
+					<span class="start">{{start}}</span> - <span class="end">{{end}}</span>
+				</span>
+			</div>
+			{{/hackathons}}
+
+			<div class="projects">
+				<h3>Projects</h3>
+				{{#projects}}
+					<div class="project">
+						<h4>{{name}}</h4>
+						<p class="description">{{description}}</p>
+						<div class="urls">
+							<a href="{{url}}">View Project</a>
+							<a href="{{source}}">View Source</a>
+						</div>
+						<div class="team">
+							{{#members}}
+								<span class="member">{{this}}</span>
+							{{/members}}
+						</div>
+						
+					</div>
+				{{/projects}}
+
+			</div>
+		</div>
+		</section>
+
+	</script>
+
+
+	
+
+	<footer>
+		<span>&#64; Whatever footer content and logos go here.</span>
+	</footer>
+
+	<script type="text/javascript">
+			$(document).ready(function(){
+				var template = Handlebars.compile($("#entry-template").html());
+				var d;
+				var url = window.location.host;
+
+				$.getJSON('http://' + url + '/camps/Camp0', function(json){
+					console.log(json);
+					$('#content').html(template(json));
+				});
+			});
+		</script>
+
+</body>
+
+</html>
