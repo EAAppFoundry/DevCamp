@@ -4,6 +4,12 @@ var CampProvider = require('./../models/CampProvider').CampProvider;
 var CampProvider = new CampProvider;
 var Camp = require('./../models/CampProvider');
 
+exports.getCamps = function(req, res) {
+	CampProvider.getCamps(function(err, camps) {
+		res.send(camps);
+	})
+}
+
 exports.getCampByName = function(req, res) {
 	var campName = req.params.name;
 	logger.info(campName);

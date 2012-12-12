@@ -28,60 +28,62 @@
 	</header>
 	
 	<script id="entry-template" type="text/x-handlebars-template">
-		<title>{{campName}} Api Documentation</title>
 
-		<section class="camp">
+		{{#objects}}
+			<title>{{campName}} Api Documentation</title>
 
-		<header>
-			<h2>{{campName}}</h2>
-			
-			<div class="dates">
-				<span class="start">{{startDate}}</span> - <span class="end">{{endDate}}</span>
-			</div>
+			<section class="camp">
 
-			<div class="sponsers">
-				<h3>Sponsers</h3>
-				{{#sponsers}}
-					<span class="name">{{this}}</span>
-				{{/sponsers}}
-			</div>
-		</header>
+			<header>
+				<h2>{{campName}}</h2>
+				
+				<div class="dates">
+					<span class="start">{{startDate}}</span> - <span class="end">{{endDate}}</span>
+				</div>
 
-		<div class="hackathons">
-			<h3>Hackathons</h3>
+				<div class="sponsers">
+					<h3>Sponsers</h3>
+					{{#sponsers}}
+						<span class="name">{{this}}</span>
+					{{/sponsers}}
+				</div>
+			</header>
 
-			{{#hackathons}}
-			<div class="hackathon">
-				<span class="location">{{location}}</span>
-				<span class="dates">
-					<span class="start">{{start}}</span> - <span class="end">{{end}}</span>
-				</span>
-			</div>
-			{{/hackathons}}
+			<div class="hackathons">
+				<h3>Hackathons</h3>
 
-			<div class="projects">
-				<h3>Projects</h3>
-				{{#projects}}
-					<div class="project">
-						<h4>{{name}}</h4>
-						<p class="description">{{description}}</p>
-						<div class="urls">
-							<a href="{{url}}">View Project</a>
-							<a href="{{source}}">View Source</a>
+				{{#hackathons}}
+				<div class="hackathon">
+					<span class="location">{{location}}</span>
+					<span class="dates">
+						<span class="start">{{start}}</span> - <span class="end">{{end}}</span>
+					</span>
+				</div>
+				{{/hackathons}}
+
+				<div class="projects">
+					<h3>Projects</h3>
+					{{#projects}}
+						<div class="project">
+							<h4>{{name}}</h4>
+							<p class="description">{{description}}</p>
+							<div class="urls">
+								<a href="{{url}}">View Project</a>
+								<a href="{{source}}">View Source</a>
+							</div>
+							<div class="team">
+								{{#members}}
+									<span class="member">{{this}}</span>
+								{{/members}}
+							</div>
+							
 						</div>
-						<div class="team">
-							{{#members}}
-								<span class="member">{{this}}</span>
-							{{/members}}
-						</div>
-						
-					</div>
-				{{/projects}}
+					{{/projects}}
 
+				</div>
 			</div>
-		</div>
-		</section>
-
+			</section>
+		{{/objects}}
 	</script>
 
 
@@ -98,8 +100,11 @@
 				var url = window.location.host;
 
 				$.getJSON('http://' + url + '/camps/Camp0', function(json){
-					console.log(json);
-					$('#content').html(template(json));
+					//console.log(json);
+					var wrapper = {objects:json}
+					console.log(wrapper);
+
+					$('#content').html(template(wrapper));
 				});
 			});
 		</script>
