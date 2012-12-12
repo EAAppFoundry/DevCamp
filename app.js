@@ -20,6 +20,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   config.setDevelopmentConfig();
+  config.EnvConfig.dirname = __dirname;
   logger.info('running dev config');
 
   app.use(express.errorHandler());
