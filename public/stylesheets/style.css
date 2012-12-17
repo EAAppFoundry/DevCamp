@@ -12,19 +12,19 @@ html{
 }
 
 body {
-  padding:80px 20px;
-  margin:0;
-  width:100%;
-  height:100%;
-  font: 14px "Proxima Nova", "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #594a41;
-  background: #eeeeee;
-  display:block;
-  box-sizing: border-box;
+	padding:80px 20px;
+	margin:0;
+	width:100%;
+	height:100%;
+	font: 14px "Proxima Nova", "Lucida Grande", Helvetica, Arial, sans-serif;
+	color: #594a41;
+	background: #eeeeee;
+	display:block;
+	box-sizing: border-box;
 }
 
 a {
-  color:#e05125;
+ 	color:#e05125;
 }
 
 h1{
@@ -205,6 +205,27 @@ footer span{
 	margin-right:8px;
 }
 
+.news{
+	width:200px;
+	height:60px;
+	top:8px;
+	right:8px;
+	position:absolute;
+	padding:6px;
+	display:block;
+	box-sizing:border-box;
+	border:none;
+	color:#bb2025;
+	text-align:left;
+	z-index:3;
+}
+
+.news p{
+	margin:0;
+	padding:0;
+	font-style:italic;
+}
+
 .portrait{
 	width:50px;
 	height:50px;
@@ -279,4 +300,23 @@ footer span{
 
 .urls > a:hover{
 	color:#594a41;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+@media all and (max-width:768px){
+
+	section:nth-of-type(1){
+	    margin-top:42px;
+	    transition: margin-top .2s;
+	    -webkit-transition: margin-top .2s;
+	}
+
+	.news{
+		width:100%;
+		height:28px;
+		top:90px;
+		left:20px;
+	}
+
 }
