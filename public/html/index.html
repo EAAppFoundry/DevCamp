@@ -27,6 +27,11 @@
 		<img class="branding" src="images/dev-camp-logo-horz.png">
 	</header>
 	
+	<div class="news">
+		<p>Next DevCamp starts on March 4th!</p>
+		<p><a href="mailto:don.browning@turner.com">Sign me up!</a></p>
+	</div>
+
 	<script id="entry-template" type="text/x-handlebars-template">
 
 		{{#objects}}
@@ -67,6 +72,7 @@
 							<h4>{{name}}</h4>
 							<p class="description">{{description}}</p>
 							<div class="urls">
+								<a href="{{url}}">View Pitch</a>
 								<a href="{{url}}">View Project</a>
 								<a href="{{source}}">View Source</a>
 							</div>
@@ -98,7 +104,7 @@
 				var d;
 				var url = window.location.host;
 
-				$.getJSON('http://' + url + '/camps/Camp0', function(json){
+				$.getJSON('http://' + url + '/camps', function(json){
 					// Wrapping the result for handlebars iteration
 					var wrapper = {objects:json}
 					//console.log(wrapper);
