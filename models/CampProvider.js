@@ -23,7 +23,9 @@ var Camp = new Schema({
     		description 	: String,
     		members			: [String],
     		url				: String,
-    		source			: String
+    		source			: String,
+            deck            : String,
+            pitch           : String
     	
     }]
 });
