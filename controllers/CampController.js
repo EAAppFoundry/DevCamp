@@ -58,6 +58,8 @@ function createFirstEvent() {
 	project.members = ['Isabele Joefry', 'Hongwei Yan', 'Brad Peacock', 'Kwan Ng'];
 	project.url = 'http://www.cnn.com';
 	project.source = 'http://bitbucket.org';
+	project.pitch = 'http://www.esri.com';
+	project.deck = 'http://www.xkcd.com';
 
 	var project2 = new Object();
 	project2.name = 'FundIT!';
@@ -65,6 +67,9 @@ function createFirstEvent() {
 	project2.members = ['Allen Lyons','Rich Anderson', 'Brian Still'];
 	project2.url = 'http://www.cnn.com';
 	project2.source = 'https://github.com/EAAppFoundry/FundIT';
+	project.pitch = 'http://www.esri.com';
+	project.deck = 'http://www.xkcd.com';
+	
 	c.projects = [project, project2];
 
 	return c;
