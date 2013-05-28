@@ -9,3 +9,5 @@ app.get('/', SiteController.index);
 app.get('/camps/:name', CampController.getCampByName);
 app.get('/camps', CampController.getCamps);
 app.get('/testsave', CampController.save);
+app.get('/browser', SiteController.browser);
+

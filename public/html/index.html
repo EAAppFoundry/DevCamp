@@ -100,6 +100,14 @@
 
 	<script type="text/javascript">
 			$(document).ready(function(){
+        // Browser detection b/c this site doesn't really render
+       // in IE.  Of course, real devs don't use IE, so this
+      // is Ok...
+        var browser = $.browser;
+        if(browser.msie) {
+          window.location='/browser';
+        }
+
 				var template = Handlebars.compile($("#entry-template").html());
 				var d;
 				var url = window.location.host;
