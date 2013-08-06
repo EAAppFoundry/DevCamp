@@ -1,0 +1,71 @@
+{
+    "endDate": {
+        "$date": "2013-08-23T00:00:00.000Z"
+    },
+    "startDate": {
+        "$date": "2013-07-07T00:00:00.000Z"
+    },
+    "campName": "Camp1",
+    "projects": [
+        {
+            "name": "Mobile App Catalog",
+            "description": "A replacment for our internal mobile app catalog",
+            "url": "http://mobile-apps.somesketches.com/",
+            "source": "https://bitbucket.org/EATurner/mobile-apps",
+            "pitch": "",
+            "deck": "",
+            "members": [
+                "Chris Gonzaliz",
+                "Kevin Brill",
+                "Nick Teissler"
+            ]
+        },
+        {
+            "name": "MapIT!",
+            "description": "Point to point directions for locations at the Techwood campus",
+            "url": "",
+            "source": "",
+            "deck": "",
+            "pitch": "",
+            "members": [
+                "Allen Lyons",
+                "Angie Smith"
+            ]
+        },
+        {
+            "name": "Dev Skill-finder!",
+            "description": "Who does what, and how to find them?",
+            "url": "",
+            "source": "",
+            "deck": "",
+            "pitch": "",
+            "members": [
+                "Mark Stephens",
+                "Sendil Duraisamy"
+            ]
+        }
+    ],
+    "hackathons": [
+        {
+            "location": "Hub Atl",
+            "start": {
+                "$date": "2013-07-09T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2013-07-12T00:00:00.000Z"
+            }
+        },
+        {
+            "location": "Hub Atl",
+            "start": {
+                "$date": "2013-07-22T00:00:00.000Z"
+            },
+            "end": {
+                "$date": "2013-07-24T00:00:00.000Z"
+            }
+        }
+    ],
+    "sponsers": [
+        "Don Browning"
+    ]
+}
